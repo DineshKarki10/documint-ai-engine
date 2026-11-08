@@ -1,0 +1,13 @@
+# Virtual Environments & Python Caches
+.venv/
+__pycache__/
+
+# Local Vector Database Storage
+chroma_db/
+
+# Local Environment Secrets
+.env
+
+# OS / Editor Files
+.DS_Store
+.vscode/
