@@ -126,8 +126,8 @@ DocuMint can be deployed directly to [Hugging Face Spaces](https://huggingface.c
 ### `space.yaml`
 
 ```yaml
-sdk: docker
-app_port: 7860
+sdk: gradio
+app_file: run.py
 title: DocuMint Engine
 emoji: 📄
 colorFrom: purple
@@ -140,8 +140,8 @@ license: mit
 
 | Field | Value | Description |
 |-------|-------|-------------|
-| `sdk` | `docker` | Uses Docker as the runtime SDK |
-| `app_port` | `7860` | Gradio server port exposed by the container |
+| `sdk` | `gradio` | Uses Gradio as the runtime SDK (free on Hugging Face Spaces) |
+| `app_file` | `run.py` | Entry point file that launches the Gradio app |
 | `title` | `DocuMint Engine` | Display name for the Space |
 | `emoji` | `📄` | Emoji shown next to the Space title |
 | `colorFrom` | `purple` | Gradient start color for the Space header |
@@ -152,12 +152,12 @@ license: mit
 ### Deploying to Hugging Face Spaces
 
 1. Create a new Space on [Hugging Face](https://huggingface.co/new-space)
-2. Select **Docker** as the SDK
+2. Select **Gradio** as the SDK (free tier)
 3. Connect your repository or upload the files directly
 4. Add the following secrets in the Space settings:
    - `GROQ_API_KEY` — Your Groq API key (required)
    - `HF_TOKEN` — Your Hugging Face token (optional fallback)
-5. The Space will build the Docker image and launch on port 7860
+5. The Space will build from `run.py` and launch on port 7860
 
 ## Usage
 
