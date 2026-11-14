@@ -1,0 +1,8 @@
+sdk: docker
+app_port: 7860
+title: DocuMint Engine
+emoji: 📄
+colorFrom: purple
+colorTo: indigo
+pinned: false
+license: mit
