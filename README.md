@@ -119,46 +119,6 @@ docker run -p 7860:7860 \
   documint-ai-engine
 ```
 
-## Hugging Face Spaces
-
-DocuMint can be deployed directly to [Hugging Face Spaces](https://huggingface.co/spaces) using the `space.yaml` configuration file at the repository root.
-
-### `space.yaml`
-
-```yaml
-sdk: gradio
-app_file: run.py
-title: DocuMint Engine
-emoji: 📄
-colorFrom: purple
-colorTo: indigo
-pinned: false
-license: mit
-```
-
-### Configuration Reference
-
-| Field | Value | Description |
-|-------|-------|-------------|
-| `sdk` | `gradio` | Uses Gradio as the runtime SDK (free on Hugging Face Spaces) |
-| `app_file` | `run.py` | Entry point file that launches the Gradio app |
-| `title` | `DocuMint Engine` | Display name for the Space |
-| `emoji` | `📄` | Emoji shown next to the Space title |
-| `colorFrom` | `purple` | Gradient start color for the Space header |
-| `colorTo` | `indigo` | Gradient end color for the Space header |
-| `pinned` | `false` | Whether the Space is pinned on your profile |
-| `license` | `mit` | License identifier for the Space |
-
-### Deploying to Hugging Face Spaces
-
-1. Create a new Space on [Hugging Face](https://huggingface.co/new-space)
-2. Select **Gradio** as the SDK (free tier)
-3. Connect your repository or upload the files directly
-4. Add the following secrets in the Space settings:
-   - `GROQ_API_KEY` — Your Groq API key (required)
-   - `HF_TOKEN` — Your Hugging Face token (optional fallback)
-5. The Space will build from `run.py` and launch on port 7860
-
 ## Usage
 
 ### Document Ingestion
@@ -298,8 +258,7 @@ documint-ai-engine/
 ├── app.py                      # Gradio application entry point
 ├── Dockerfile                  # Container configuration
 ├── requirements.txt            # Python dependencies
-├── run.py                      # Application launcher with .env loading
-├── space.yaml                  # Hugging Face Spaces configuration
+├── run.py                      # Application launcher with .env loading             
 ├── .gitignore                  # Git ignore rules
 ├── .dockerignore               # Docker ignore rules
 ├── .env                        # Local environment secrets (not committed)

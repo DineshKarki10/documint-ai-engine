@@ -1,8 +1,0 @@
-sdk: gradio
-app_file: run.py
-title: DocuMint Engine
-emoji: 📄
-colorFrom: purple
-colorTo: indigo
-pinned: false
-license: mit
